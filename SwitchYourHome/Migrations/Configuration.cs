@@ -5,7 +5,7 @@ namespace SwitchYourHome.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    public sealed class Configuration : DbMigrationsConfiguration<SwitchYourHome.Models.AppDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<SwitchYourHome.Data.AppDbContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace SwitchYourHome.Migrations
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(SwitchYourHome.Models.AppDbContext context)
+        protected override void Seed(SwitchYourHome.Data.AppDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

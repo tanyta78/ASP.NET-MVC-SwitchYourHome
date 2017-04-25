@@ -1,0 +1,32 @@
+﻿@model List<SwitchYourHome.Data.Ad>
+@{
+    ViewBag.Title = "List";
+}
+
+<div class="container">
+    <div class="row">
+        @foreach (var ad in Model)
+        {
+            <div class="col-sm-6">
+                <article>
+                    <header>
+                        <h2>
+                            @Html.ActionLink(@ad.Title, "Details", "Ads", new { @id = ad.Id }, null)
+                        </h2>
+                    </header>
+                    <p>
+                        @ad.Description
+                    </p>
+                    <footer class="pull-right">
+                        <small class="author">
+                            Owner contact @ad.Owner.Email
+                        </small>
+                    </footer>
+                </article>
+            </div>
+        }
+    </div>
+</div>
+<hr />
+
+

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Owin;
 using Owin;
+using SwitchYourHome.Data;
 using SwitchYourHome.Migrations;
 using SwitchYourHome.Models;
 using System.Data.Entity;

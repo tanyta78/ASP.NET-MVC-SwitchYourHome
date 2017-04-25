@@ -1,0 +1,27 @@
+﻿@model SwitchYourHome.Data.Ad
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <article>
+        <header>
+            <h2>
+                @Model.Title
+            </h2>
+        </header>
+        <p>
+            @Model.Description
+        </p>
+        <small class="author">
+            --author @Model.Owner.FullName
+        </small>
+        <footer class="pull-right">
+            @Html.ActionLink("Edit", "Edit", "Ads", new { @id = Model.Id }, new { @class = "btn btn-success btn-xs" })
+            @Html.ActionLink("Delete", "Delete", "Ads", new { @id = Model.Id }, new { @class = "btn btn-danger btn-xs" })
+            @Html.ActionLink("Back", "Index", "Ads", null, new { @class = "btn btn-default btn-xs" })
+        </footer>
+    </article>
+</div>
+<hr />
+
