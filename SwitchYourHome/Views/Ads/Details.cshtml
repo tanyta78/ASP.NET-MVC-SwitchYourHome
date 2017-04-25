@@ -17,9 +17,13 @@
             --author @Model.Owner.FullName
         </small>
         <footer class="pull-right">
-            @Html.ActionLink("Edit", "Edit", "Ads", new { @id = Model.Id }, new { @class = "btn btn-success btn-xs" })
-            @Html.ActionLink("Delete", "Delete", "Ads", new { @id = Model.Id }, new { @class = "btn btn-danger btn-xs" })
-            @Html.ActionLink("Back", "Index", "Ads", null, new { @class = "btn btn-default btn-xs" })
+            @if (User.IsInRole("Admin") || Model.IsOwner(User.Identity.Name))
+            {
+                @Html.ActionLink("Edit", "Edit", "Ads", new { @id = Model.Id }, new { @class = "btn btn-success btn-xs" })
+                @Html.ActionLink("Delete", "Delete", "Ads", new { @id = Model.Id }, new { @class = "btn btn-danger btn-xs" })
+            }
+           
+            @Html.ActionLink("Back", "List", "Ads", null, new { @class = "btn btn-default btn-xs" })
         </footer>
     </article>
 </div>

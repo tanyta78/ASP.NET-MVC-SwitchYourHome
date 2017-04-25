@@ -40,6 +40,7 @@
         }
         //
         //GET Ad/create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -134,6 +135,11 @@
                     .Include(a => a.Owner)
                     .First();
 
+                if (! IsUserAuthorizedToEdit(ad))
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+                }
+
                 if (ad==null)
                 {
                     return HttpNotFound();
@@ -197,6 +203,11 @@
                 {
                     var ad = db.Ads.FirstOrDefault(a => a.Id == model.Id);
 
+                    if (!IsUserAuthorizedToEdit(ad))
+                    {
+                        return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+                    }
+
                     ad.Accommodates= model.Accommodates ;
                     ad.Available=model.Available ;
                     ad.Bathrooms= model.Bathrooms;
@@ -217,6 +228,14 @@
             }
 
             return View(model);
+        }
+
+        private bool IsUserAuthorizedToEdit(Ad ad)
+        {
+            bool isAdmin = this.User.IsInRole("Admin");
+            bool isOwner = ad.IsOwner(this.User.Identity.Name);
+
+            return isAdmin || isOwner;
         }
     }
 }

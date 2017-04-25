@@ -46,5 +46,10 @@
         public string OwnerId { get; set; }
 
         public virtual ApplicationUser Owner { get; set; }
+
+        public bool IsOwner(string name)
+        {
+            return this.Owner.UserName.Equals(name);
+        }
     }
 }
