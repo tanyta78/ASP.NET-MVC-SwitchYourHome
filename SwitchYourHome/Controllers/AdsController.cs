@@ -19,7 +19,32 @@
         //GET : AD
         public ActionResult Index()
         {
-            return View("List");
+            using (var db = new AppDbContext())
+            {
+
+                var ads = db.Ads
+                    .Include(a => a.Owner)
+                    .OrderByDescending(a=>a.Id)
+                    .Take(3)
+                    .Select(a=>new AdsIndexModel()
+                    {
+                        Accommodates=a.Accommodates,
+                        Bathrooms=a.Bathrooms,
+                        Available=a.Available,
+                        Bedrooms=a.Bedrooms,
+                        Childrens=a.Childrens,
+                        ImageUrl=a.ImageUrl,
+                        Location=a.Location,
+                        Pets=a.Pets,
+                        Smoking=a.Smoking,
+                        Title=a.Title,
+                        Id=a.Id,
+                        OwnerId=a.OwnerId
+                    })
+                    .ToList();
+
+                return View(ads);
+            }
         }
 
 
@@ -32,6 +57,21 @@
 
                 var ads = db.Ads
                     .Include(a => a.Owner)
+                    .Select(a => new AdsIndexModel()
+                    {
+                        Accommodates = a.Accommodates,
+                        Bathrooms = a.Bathrooms,
+                        Available = a.Available,
+                        Bedrooms = a.Bedrooms,
+                        Childrens = a.Childrens,
+                        ImageUrl = a.ImageUrl,
+                        Location = a.Location,
+                        Pets = a.Pets,
+                        Smoking = a.Smoking,
+                        Title = a.Title,
+                        Id = a.Id,
+                        OwnerId = a.OwnerId
+                    })
                     .ToList();
 
                 return View(ads);
@@ -223,7 +263,7 @@
                     db.Entry(ad).State = EntityState.Modified;
                     db.SaveChanges();
 
-                    return RedirectToAction("List");
+                    return RedirectToAction("Details", new { id = model.Id });
                 }
             }
 

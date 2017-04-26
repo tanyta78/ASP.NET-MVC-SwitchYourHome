@@ -1,6 +1,6 @@
 ﻿@model List<SwitchYourHome.Models.Ads.AdsIndexModel>
 @{
-    ViewBag.Title = "List";
+    ViewBag.Title = "Index";
 }
 
 <div class="container">
@@ -16,17 +16,17 @@
                     <a class="btn btn-default" href="~/Ads/Details/@ad.Id">See more</a>
                     <img class="img-responsive" src="@ad.ImageUrl" />
                 </p>
-
+                
                 <button type="button" class="btn btn-default btn-group-lg">
                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span> @ad.Accommodates
                 </button>
                 <button type="button" class="btn btn-default btn-group-lg">
                     <span class="glyphicon glyphicon-bed" aria-hidden="true"></span>  @ad.Bedrooms rooms
                 </button>
-                <button type="button" class="btn btn-default btn-group-lg">
+                <button type="button" class="btn btn-default btn-group-lg" >
                     <img width="18" height="18" src="http://img.freepik.com/free-icon/toilet_318-112930.jpg?size=338&ext=jpg" /> @ad.Bathrooms baths
                 </button>
-
+               
                 <hr />
                 <button type="button" class="btn btn-default btn-sm">
                     <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>  @ad.Location
@@ -37,3 +37,5 @@
     </div>
 </div>
 <hr />
+
+

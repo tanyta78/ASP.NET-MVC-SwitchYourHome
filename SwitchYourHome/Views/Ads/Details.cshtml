@@ -4,28 +4,67 @@
 }
 
 <div class="container">
-    <article>
-        <header>
-            <h2>
-                @Model.Title
-            </h2>
-        </header>
-        <p>
-            @Model.Description
-        </p>
-        <small class="author">
-            --author @Model.Owner.FullName
-        </small>
-        <footer class="pull-right">
-            @if (User.IsInRole("Admin") || Model.IsOwner(User.Identity.Name))
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>
+                    @Model.Title
+                </h2>
+                <button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>  @Model.Location
+                </button>
+                <p>
+                    <img class="img-thumbnail" src="@Model.ImageUrl" />
+                </p>
+
+            </div>
+        </div>
+        <div class="row">
+
+            <button type="button" class="btn btn-default btn-group-lg">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span> @Model.Accommodates
+            </button>
+            <button type="button" class="btn btn-default btn-group-lg">
+                <span class="glyphicon glyphicon-bed" aria-hidden="true"></span>  @Model.Bedrooms rooms
+            </button>
+            <button type="button" class="btn btn-default btn-group-lg">
+                <img width="18" height="18" src="http://img.freepik.com/free-icon/toilet_318-112930.jpg?size=338&ext=jpg" /> @Model.Bathrooms baths
+            </button>
+            <button type="button" class="btn btn-default btn-group-lg">
+                <img width="18" height="18" src="https://image.flaticon.com/icons/png/128/43/43753.png" /> @Model.Childrens
+            </button>
+            <button type="button" class="btn btn-default btn-group-lg">
+                <img width="18" height="18" src="https://image.flaticon.com/icons/svg/34/34872.svg" /> @Model.Pets
+            </button>
+            <button type="button" class="btn btn-default btn-group-lg">
+                <img width="18" height="18" src="http://www.vectorportal.com/img_novi/smoking_6789.jpg" /> @Model.Smoking
+            </button>
+            <p>
+                @Model.Description
+            </p>
+        </div>
+        <hr />
+   
+        <footer >
+            <div class="pull-left">
+                <button type="button" class="btn btn-default btn-lg">
+                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>  @Model.Owner.Email
+                </button>
+            </div>
+            <div class="pull-right">
+                @if (User.IsInRole("Admin") || Model.IsOwner(User.Identity.Name))
             {
-                @Html.ActionLink("Edit", "Edit", "Ads", new { @id = Model.Id }, new { @class = "btn btn-success btn-xs" })
-                @Html.ActionLink("Delete", "Delete", "Ads", new { @id = Model.Id }, new { @class = "btn btn-danger btn-xs" })
-            }
+                    @Html.ActionLink("Edit", "Edit", "Ads", new { @id = Model.Id }, new { @class = "btn btn-success btn-lg" })
+                    @Html.ActionLink("Delete", "Delete", "Ads", new { @id = Model.Id }, new { @class = "btn btn-danger btn-lg" })
+
+                }
+
+                @Html.ActionLink("Back", "Index", "Ads", null, new { @class = "btn btn-default btn-lg" })
+            </div>
            
-            @Html.ActionLink("Back", "List", "Ads", null, new { @class = "btn btn-default btn-xs" })
         </footer>
-    </article>
+
+    </div>
 </div>
 <hr />
 

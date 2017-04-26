@@ -1,6 +1,7 @@
 ﻿namespace SwitchYourHome.Data
 {
     using Data;
+    using Helpers;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -40,6 +41,9 @@
         public string Available { get; set; }
 
         [Required]
+        [Display(Name ="Image URL")]
+        [Url]
+        [ImageUrl]
         public string ImageUrl { get; set; }
 
         
