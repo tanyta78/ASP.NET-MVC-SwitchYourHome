@@ -166,7 +166,7 @@ namespace SwitchYourHome.Migrations
 
             //context.Ads.Add(new Ad
             //{
-            //    Accommodates = 20,
+            //    Accommodates = 10,
             //    Available = "Available",
             //    Bathrooms = 10,
             //    Bedrooms = 10,
@@ -185,8 +185,8 @@ namespace SwitchYourHome.Migrations
             //{
             //    Accommodates = 2,
             //    Available = "Available",
-            //    Bathrooms = 1,
-            //    Bedrooms = 1,
+            //    Bathrooms = 2,
+            //    Bedrooms = 2,
             //    Childrens = "Children are Wellcome",
             //    Description = "Our house is a Victorian, terraced, 4 storey town house, built in 1850, which has recently undergone a complete renovation, which took the best part of two years. The whole of the basement is given over to a state of the art kitchen, designed by Robert Timmons, recently voted Kitchen Designer of the Year. There is a dining area, and access to both front and back gardens. There are numerous spaces outside to sit and relax, depending on your mood and the position of the sun. On the next floor up, there is a living room, which runs the whole length of the house with large sash windows at either end. The room has been decorated with a 'seaside' theme and has a calm and light feel. On the first floor there is a bedroom facing south, again with large windows. There is a wonderfully comfortable bed handmade from wenge wood, and built in wardrobes, which give the room a Japanese feel. The mattress is king size and is hand made with 3500 pocket springs. Also on this floor, is the larger of the two bathrooms. This has a large bath big enough for two people, as well as a walk in shower. The whole room is clad in Italian stone. The attic floor has been decorated as a Morroccan 'souk' and can be used as an extra sitting room or a second bedroom. There are two single beds, which can be put together to make one very large double. A lovely space to spend the evening watching cable tv or dvd's. There are televisions and stereos in the other sitting areas, as well as both an iMac and a Mini Mac with 100 meg wireless broadband access, for your use. There is a Skype internet phone, which has been set up to contact other Skype users for free. A lot of time and effort has gone into the house and I guarantee you will enjoy your stay. A housekeeper comes once a week.",
             //    ImageUrl = "http://rentportlandhomes.com/wp-content/uploads/2014/08/Portland-Homes.jpg",
@@ -202,7 +202,7 @@ namespace SwitchYourHome.Migrations
             //{
             //    Accommodates = 4,
             //    Available = "Available",
-            //    Bathrooms = 1,
+            //    Bathrooms = 2,
             //    Bedrooms = 2,
             //    Childrens = "Children are Wellcome",
             //    Description = "Our apartment is about 200 sqm and contains a spacious living room with kitchen, TV corner, cabinet and bathroom on the first floor; 2 bedrooms and a bathroom on the second floor. You will enjoy the open spaces of the house as at the same time each separate part can provide you calm and relaxing moments. The house has a modern design and furniture and is completely comfortable to accommodate a 4 persons’ family or separate guests.There is wi-fi internet access. The open terrace is a roomy place where you can enjoy your morning coffee watching the sunrise over the sea. There is a small cozy terrace on the second floor, going out from master bedroom. The apartment is situated in a nice quarter of Varna town next to hotels and villas, just 5 minutes from the city center by car. Entering our house, you’ll be fascinated by the great view, covering 180o of the coast - beautiful houses, cape Galata and the sea. ",

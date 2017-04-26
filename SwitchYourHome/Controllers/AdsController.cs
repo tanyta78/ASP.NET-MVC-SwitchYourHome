@@ -50,12 +50,24 @@
 
         //GET: Ad/List
 
-        public ActionResult List()
+        public ActionResult List(int page = 1,string search = null)
         {
             using (var db = new AppDbContext())
             {
+                var pageSize = 4;
 
-                var ads = db.Ads
+                var adsQuery = db.Ads.AsQueryable();
+
+                if (search != null)
+                {
+                    adsQuery = adsQuery
+                        .Where(a => a.Location.ToLower().Contains(search.ToLower()) || a.Title.ToLower().Contains(search.ToLower()));
+                }
+
+                var ads = adsQuery
+                    .OrderByDescending(a=>a.Id)
+                    .Skip((page-1) * pageSize)
+                    .Take(pageSize)
                     .Include(a => a.Owner)
                     .Select(a => new AdsIndexModel()
                     {
@@ -73,6 +85,8 @@
                         OwnerId = a.OwnerId
                     })
                     .ToList();
+
+                ViewBag.CurrentPage = page;
 
                 return View(ads);
             }

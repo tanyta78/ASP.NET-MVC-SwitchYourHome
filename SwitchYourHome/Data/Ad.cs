@@ -24,7 +24,7 @@
         public int Accommodates { get; set; }
 
         [Required]
-        [Range (1, 20)]
+      
         public int Bedrooms { get; set; }
 
         public int Bathrooms { get; set; }

@@ -3,17 +3,29 @@
     ViewBag.Title = "List";
 }
 
+<h2 class="text-center"> Page @ViewBag.CurrentPage</h2>
+
+<div class="text-center">
+    @using (Html.BeginForm("List", "Ads", FormMethod.Get))
+    {
+        <div class="text-center mt-60">
+            <input type="text" class="form-control" style="display:inline-block" name="Search" value="@Request.QueryString["search"]" />
+            <input type="submit" value="Search Locations" class="btn btn-default" />
+        </div>
+    }
+</div>
+
 <div class="container">
     <div class="row">
         @foreach (var ad in Model)
         {
-            <div class="col-sm-4">
+            <div class="col-md-6">
                 <h2>
                     @Html.ActionLink(@ad.Title, "Details", "Ads", new { @id = ad.Id }, null)
                 </h2>
 
                 <p>
-                    <a class="btn btn-default" href="~/Ads/Details/@ad.Id">See more</a>
+                    <a class="btn btn-primary" href="~/Ads/Details/@ad.Id">See more</a>
                     <img class="img-responsive" src="@ad.ImageUrl" />
                 </p>
 
@@ -37,3 +49,13 @@
     </div>
 </div>
 <hr />
+
+@{ 
+    var currentSearch = Request.QueryString["search"];
+    var currentSearchQuery = currentSearch != null ? "&search=" + currentSearch : string.Empty;
+}
+
+<p class="text-center mt-60">
+    <a href="/Ads/List?page=@(ViewBag.CurrentPage-1)@(currentSearch != null ? "&search=" + currentSearch : string.Empty)" class="btn btn-primary @(ViewBag.CurrentPage==1 ? "disabled" : string.Empty)"> Previous<< </a>
+    <a href="/Ads/List?page=@(ViewBag.CurrentPage+1)@(currentSearch != null ? "&search=" + currentSearch : string.Empty)" class="btn btn-primary @(!Model.Any()||Model.Count()<4 ? "disabled" : string.Empty)"> Next >></a>
+</p>
