@@ -1,18 +1,19 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using SwitchYourHome.Models;
-using SwitchYourHome.Data;
-
-namespace SwitchYourHome.Controllers
+﻿namespace SwitchYourHome.Controllers
 {
+    using System;
+    using System.Globalization;
+    using System.Linq;
+    using System.Security.Claims;
+    using System.Threading.Tasks;
+    using System.Web;
+    using System.Web.Mvc;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.Owin;
+    using Microsoft.Owin.Security;
+    using SwitchYourHome.Models;
+    using SwitchYourHome.Data;
+
+
     [Authorize]
     public class AccountController : Controller
     {

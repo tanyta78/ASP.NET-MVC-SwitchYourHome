@@ -1,12 +1,8 @@
-﻿using SwitchYourHome.Data;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-
-namespace SwitchYourHome.Models.Ads
+﻿namespace SwitchYourHome.Models.Ads
 {
+    using Helpers;
+    using System.ComponentModel.DataAnnotations;
+
     public class AdViewModel
     {
         public int Id { get; set; }
@@ -18,11 +14,9 @@ namespace SwitchYourHome.Models.Ads
         [Required]
         public string Location { get; set; }
 
-        [Required]
         public int Accommodates { get; set; }
 
         [Required]
-        [Range(1, 20)]
         public int Bedrooms { get; set; }
 
         public int Bathrooms { get; set; }
@@ -39,6 +33,9 @@ namespace SwitchYourHome.Models.Ads
         public string Available { get; set; }
 
         [Required]
+        [Display(Name = "Image URL")]
+        [Url]
+        [ImageUrl]
         public string ImageUrl { get; set; }
 
         public string OwnerId { get; set; }

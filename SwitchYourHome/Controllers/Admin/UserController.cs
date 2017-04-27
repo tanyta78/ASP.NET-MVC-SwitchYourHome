@@ -1,18 +1,18 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
-using SwitchYourHome.Data;
-using SwitchYourHome.Models;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
-
-namespace SwitchYourHome.Controllers.Admin
+﻿namespace SwitchYourHome.Controllers.Admin
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Microsoft.AspNet.Identity.Owin;
+    using SwitchYourHome.Data;
+    using SwitchYourHome.Models;
+    using System;
+    using System.Collections.Generic;
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Net;
+    using System.Web;
+    using System.Web.Mvc;
+
     [Authorize(Roles ="Admin")]
     public class UserController : Controller
     {

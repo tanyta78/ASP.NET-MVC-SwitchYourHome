@@ -431,7 +431,7 @@ namespace SwitchYourHome.Migrations
                 Location = "Cape Town, South Africa ",
                 Pets = "Pets are Wellcome",
                 Smoking = "No smoking",
-                Title = "Large family home 30 mins from Cape Town ",
+                Title = "Large family home near Cape Town ",
                 OwnerId = user.Id
 
             });
@@ -465,7 +465,7 @@ namespace SwitchYourHome.Migrations
                 Location = "Saint Sulpice la Foret, France",
                 Pets = "Pets are Wellcome",
                 Smoking = "Smoking Allowed",
-                Title = "Manor house with garden and tennis court",
+                Title = "House with garden and tennis court",
                 OwnerId = user.Id
 
             });
@@ -516,7 +516,7 @@ namespace SwitchYourHome.Migrations
                 Location = "Rio de Janeiro, Brazil",
                 Pets = "Pets are Wellcome",
                 Smoking = "Smoking Allowed",
-                Title = "Beach Villa pool,gardens fishing",
+                Title = "Beach Villa pool,gardens",
                 OwnerId = user.Id
 
             });
@@ -533,7 +533,7 @@ namespace SwitchYourHome.Migrations
                 Location = "Cape Town, South Africa ",
                 Pets = "Pets not allowed",
                 Smoking = "No smoking",
-                Title = "Large family home 30 mins from Cape Town",
+                Title = "Large family home ",
                 OwnerId = user.Id
 
             });

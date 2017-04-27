@@ -50,13 +50,18 @@
 
         //GET: Ad/List
 
-        public ActionResult List(int page = 1,string search = null)
+        public ActionResult List(int page = 1,string search = null, string user = null)
         {
             using (var db = new AppDbContext())
             {
                 var pageSize = 4;
 
                 var adsQuery = db.Ads.AsQueryable();
+
+               if(user != null)
+                {
+                    adsQuery = adsQuery.Where(a => a.Owner.Email == user);
+                }
 
                 if (search != null)
                 {

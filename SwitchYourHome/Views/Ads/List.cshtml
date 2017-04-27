@@ -51,11 +51,13 @@
 <hr />
 
 @{ 
+    var currentUser = Request.QueryString["user"];
     var currentSearch = Request.QueryString["search"];
     var currentSearchQuery = currentSearch != null ? "&search=" + currentSearch : string.Empty;
+    var currentUserQuery = currentUser != null ? "&user=" + currentUser : string.Empty;
 }
 
 <p class="text-center mt-60">
-    <a href="/Ads/List?page=@(ViewBag.CurrentPage-1)@(currentSearch != null ? "&search=" + currentSearch : string.Empty)" class="btn btn-primary @(ViewBag.CurrentPage==1 ? "disabled" : string.Empty)"> Previous<< </a>
-    <a href="/Ads/List?page=@(ViewBag.CurrentPage+1)@(currentSearch != null ? "&search=" + currentSearch : string.Empty)" class="btn btn-primary @(!Model.Any()||Model.Count()<4 ? "disabled" : string.Empty)"> Next >></a>
+    <a href="/Ads/List?page=@(ViewBag.CurrentPage-1)@currentUserQuery@currentSearchQuery" class="btn btn-primary @(ViewBag.CurrentPage==1 ? "disabled" : string.Empty)"> Previous<< </a>
+    <a href="/Ads/List?page=@(ViewBag.CurrentPage+1)@currentUserQuery@currentSearchQuery" class="btn btn-primary @(!Model.Any()||Model.Count()<4 ? "disabled" : string.Empty)"> Next >></a>
 </p>

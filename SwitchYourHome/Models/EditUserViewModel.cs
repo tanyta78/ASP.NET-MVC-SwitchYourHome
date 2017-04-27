@@ -1,13 +1,13 @@
-﻿using SwitchYourHome.Data;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-
-namespace SwitchYourHome.Models
+﻿namespace SwitchYourHome.Models
 {
+    using SwitchYourHome.Data;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+    using System.Linq;
+    using System.Web;
+
     public class EditUserViewModel
     {
         public ApplicationUser User { get; set; }
